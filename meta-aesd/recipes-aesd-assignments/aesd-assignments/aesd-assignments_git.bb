@@ -9,13 +9,13 @@ INITSCRIPT_NAME:${PN}="aesdsocket-start-stop"
 # Start script Implementation
 # TODO: Set this  with the path to your assignments rep.  Use ssh protocol and see lecture notes
 # about how to setup ssh-agent for passwordless access
-# SRC_URI = "git://git@github.com/cu-ecen-aeld/<your assignments repo>;protocol=ssh;branch=master"
 SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-tahasami86.git;protocol=ssh;branch=main"
+#SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-tahasami86.git;protocol=ssh;branch=main"
 
 
 PV = "1.0+git${SRCPV}"
 # TODO: set to reference a specific commit hash in your assignment repo
-SRCREV = "c2c4e6140ec9e6ba07b0d253f6fbe015c37f5fb1"
+SRCREV = "33d616c386bae319fcee256f05396376e40bdb3c"
 
 # This sets your staging directory based on WORKDIR, where WORKDIR is defined at 
 # https://docs.yoctoproject.org/ref-manual/variables.html?highlight=workdir#term-WORKDIR
@@ -26,7 +26,7 @@ S = "${WORKDIR}/git/server"
 # TODO: Add the aesdsocket application and any other files you need to install
 # See https://git.yoctoproject.org/poky/plain/meta/conf/bitbake.conf?h=kirkstone
 FILES:${PN} += "${bindir}/aesdsocket"
-FILES:${PN} += "${bindir}/aesdsocket-start-stop.sh"
+FILES:${PN} += "${bindir}/aesdsocket-start-stop"
 # TODO: customize these as necessary for any libraries you need for your application
 # (and remove comment)
 TARGET_LDFLAGS += "-pthread -lrt"
